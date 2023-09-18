@@ -1,4 +1,4 @@
-// Function to set dark mode preference in local storage
+ // Function to set dark mode preference in local storage
 function setDarkModePreference(isDarkMode) {
 	localStorage.setItem('darkMode', isDarkMode ? 'true' : 'false');
   }
@@ -36,27 +36,62 @@ function setDarkModePreference(isDarkMode) {
   // Load dark mode preference on page load
   loadDarkModePreference();
   
-  // Your existing code for side menu toggle and other functionality
-  const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
+  // Function to store the selected link in localStorage
+  function setSelectedLink(linkId) {
+	localStorage.setItem('selectedLink', linkId);
+  }
   
-  allSideMenu.forEach(item => {
-	const li = item.parentElement;
+  // Function to get the selected link from localStorage
+  function getSelectedLink() {
+	return localStorage.getItem('selectedLink');
+  }
   
-	item.addEventListener('click', function () {
-	  allSideMenu.forEach(i => {
-		i.parentElement.classList.remove('active');
-	  })
-	  li.classList.add('active');
-	})
-  });
+  // Function to apply the "active" class to the selected link
+  function setActiveLink() {
+	const selectedLinkId = getSelectedLink();
+	if (selectedLinkId) {
+	  const selectedLink = document.getElementById(selectedLinkId);
+	  if (selectedLink) {
+		selectedLink.classList.add('active');
+	  }
+	}
+  }
   
-  // TOGGLE SIDEBAR
-  const menuBar = document.querySelector('#content nav .bx.bx-menu');
-  const sidebar = document.getElementById('sidebar');
+  // Function to handle sidebar menu item clicks
+  function handleMenuItemClick() {
+	const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li');
   
-  menuBar.addEventListener('click', function () {
-	sidebar.classList.toggle('hide');
-  });
+	allSideMenu.forEach(li => {
+	  const link = li.querySelector('a');
   
-  // Rest of your existing code for search and window resize handling
+	  link.addEventListener('click', function () {
+		// Remove "active" class from all li elements
+		allSideMenu.forEach(item => {
+		  item.classList.remove('active');
+		});
+  
+		// Add "active" class to the parent li element of the clicked link
+		li.classList.add('active');
+  
+		// Store the selected link in localStorage
+		setSelectedLink(link.id);
+	  });
+	});
+  }
+  
+  // Function to toggle the sidebar
+  function toggleSidebar() {
+	const menuBar = document.querySelector('#content nav .bx.bx-menu');
+	const sidebar = document.getElementById('sidebar');
+  
+	menuBar.addEventListener('click', function () {
+	  sidebar.classList.toggle('hide');
+	});
+  }
+  
+  // Call the functions to initialize your functionality
+  handleMenuItemClick();
+  toggleSidebar();
+  setActiveLink();
+  // Add any additional functionality you need here
   
